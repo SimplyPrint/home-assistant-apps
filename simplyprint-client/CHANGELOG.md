@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0rc15.dev9701
+
+- [SimplyPrint Client 1.0.0rc15.dev9701](https://github.com/SimplyPrint/simplyprint-client/actions/runs/31827332495)
+
 ## 1.0.0rc15.dev9601
 
 - [SimplyPrint Client 1.0.0rc15.dev9601](https://github.com/SimplyPrint/simplyprint-client/actions/runs/31816754853)

@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/apps/configuration
 name: "SimplyPrint Client"
-version: "1.0.0rc15.dev9601"
+version: "1.0.0rc15.dev9701"
 slug: "simplyprint-client"
 description: "Connect supported local 3D printers to SimplyPrint"
 url: "https://github.com/SimplyPrint/home-assistant-apps/tree/main/simplyprint-client"
