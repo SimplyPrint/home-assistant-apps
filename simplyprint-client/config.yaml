@@ -20,6 +20,12 @@ environment:
   # Deployment ownership shown beside settings controlled by this app package.
   SIMPLYPRINT_DEPLOYMENT_MANAGER: "Home Assistant"
 
+  # Store all client files in Home Assistant's persistent app data volume.
+  XDG_CACHE_HOME: "/data/cache"
+  XDG_CONFIG_HOME: "/data/config"
+  XDG_DATA_HOME: "/data/data"
+  XDG_STATE_HOME: "/data/state"
+
   # Web server binding. Supervisor assigns a free internal Ingress port.
   SIMPLYPRINT_WEB_HOST: "0.0.0.0"
   SIMPLYPRINT_SUPERVISOR_INGRESS_PORT: "1"
