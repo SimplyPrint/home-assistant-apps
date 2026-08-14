@@ -1,0 +1,31 @@
+# https://developers.home-assistant.io/docs/apps/configuration
+name: "SimplyPrint Client"
+version: "1.0.0-rc.15"
+slug: "simplyprint-client"
+description: "Connect supported local 3D printers to SimplyPrint"
+url: "https://github.com/SimplyPrint/home-assistant-apps/tree/main/simplyprint-client"
+arch:
+  - aarch64
+  - amd64
+host_network: true
+ingress: true
+ingress_port: 0
+ingress_stream: true
+panel_icon: "mdi:cloud"
+panel_title: "SimplyPrint"
+backup: cold
+stage: experimental
+timeout: 30
+environment:
+  # Deployment ownership shown beside settings controlled by this app package.
+  SIMPLYPRINT_DEPLOYMENT_MANAGER: "Home Assistant"
+
+  # Web server binding. Supervisor assigns a free internal Ingress port.
+  SIMPLYPRINT_WEB_HOST: "0.0.0.0"
+  SIMPLYPRINT_SUPERVISOR_INGRESS_PORT: "1"
+
+  # Only the authenticated Supervisor Ingress proxy may reach the web UI.
+  SIMPLYPRINT_TRUSTED_PROXY_IP: "172.30.32.2"
+  SIMPLYPRINT_TRUSTED_PROXY_PATH_HEADER: "X-Ingress-Path"
+schema: false
+image: "docker.io/simplyprint/simplyprint-client"
