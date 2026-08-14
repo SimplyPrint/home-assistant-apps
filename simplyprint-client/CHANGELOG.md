@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0rc15.dev9601
+
+- [SimplyPrint Client 1.0.0rc15.dev9601](https://github.com/SimplyPrint/simplyprint-client/actions/runs/31816754853)
+
 ## 1.0.0-rc.15
 
 - Initial experimental Home Assistant app release.
