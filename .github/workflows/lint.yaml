@@ -24,7 +24,30 @@ jobs:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
+      # Home Assistant supports `schema: false` to disable both validation and
+      # app options. action-addon-linter v2.21.0 still models this field as an
+      # object only, so lint an otherwise identical compatibility copy while
+      # asserting that the published configuration retains the intended value.
+      # https://developers.home-assistant.io/docs/apps/configuration/#optional-configuration-options
+      - name: Prepare no-options linter compatibility copy
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from shutil import copytree
+
+          source = Path("simplyprint-client")
+          target = Path(".lint/simplyprint-client")
+          copytree(source, target)
+
+          config = target / "config.yaml"
+          contents = config.read_text(encoding="utf-8")
+          marker = "schema: false\n"
+          if contents.count(marker) != 1:
+              raise SystemExit("published app must declare exactly one 'schema: false'")
+          config.write_text(contents.replace(marker, ""), encoding="utf-8")
+          PY
+
       - name: Run Home Assistant App Lint
         uses: frenck/action-addon-linter@f995494fd84fae6310d23617e66d0e37de4f14eb # v2.21.0
         with:
-          path: "./simplyprint-client"
+          path: "./.lint/simplyprint-client"
