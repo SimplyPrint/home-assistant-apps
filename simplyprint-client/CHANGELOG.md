@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0-rc.18
+
+- [SimplyPrint Client 1.0.0-rc.18](https://github.com/SimplyPrint/simplyprint-client/releases/tag/1.0.0-rc.18)
+
 ## 1.0.0-rc.17
 
 - [SimplyPrint Client 1.0.0-rc.17](https://github.com/SimplyPrint/simplyprint-client/releases/tag/1.0.0-rc.17)
