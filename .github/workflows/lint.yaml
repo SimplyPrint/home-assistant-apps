@@ -48,6 +48,6 @@ jobs:
           PY
 
       - name: Run Home Assistant App Lint
-        uses: frenck/action-addon-linter@f995494fd84fae6310d23617e66d0e37de4f14eb # v2.21.0
+        uses: frenck/action-addon-linter@d51677290aef26cdfc835271dd3c7343ce502809 # v2.21.2
         with:
           path: "./.lint/simplyprint-client"
